@@ -94,7 +94,7 @@ main {
         .sidebar-item {
             &:not(:last-child) {
                 padding-bottom: 10px;
-                border-bottom: 1px solid #00000072;
+                border-bottom: 1px solid #fff;
             }
 
             .title {
@@ -141,7 +141,7 @@ main {
 }
 
 .posts {
-    // flex: 1;
+    flex: 1;
     background-color: rgb(88, 88, 88);
     margin-left: 20px;
 
@@ -164,8 +164,9 @@ main {
         align-items: center;
         gap: 2px;
 
-        .title {
+        .title a {
             color: $main-color-700;
+            text-decoration: none;
 
             &::after {
                 content: "";
@@ -191,12 +192,13 @@ main {
             flex-direction: row;
             gap: 5px;
 
-            p {
+            a {
                 padding: 5px 10px;
                 font-size: 13px;
                 border-radius: 5px;
                 background-color: $main-color-400;
                 color: $main-color;
+                text-decoration: none;
 
                 &::after {
                     content: "";
@@ -228,6 +230,32 @@ main {
     }
 }
 
+.post-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex: 1;
+    background-color: rgb(88, 88, 88);
+    margin-left: 20px;
+
+    height: 100%;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    overflow-x: hidden;
+
+    padding: 10px;
+    gap: 10px;
+
+    .date {
+        margin-top: auto;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
 .gallery {
     width: 250px;
 
@@ -254,4 +282,141 @@ main {
 .friends {
     width: 180px;
     background-color: rgba(0, 255, 200, .45);
+}
+
+
+
+
+.post-content {
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: $main-color;
+    }
+
+    h2 {
+        font-size: 26px;
+        color: $main-color-700;
+    }
+
+    h3 {
+        font-size: 20px;
+        color: $main-color-700;
+    }
+
+    strong {
+        color: $main-color;
+    }
+
+    em {
+        opacity: 0.9;
+    }
+
+    mark {
+        background: $main-color-600;
+        color: $main-color;
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+
+    u {
+        text-decoration-color: $main-color;
+    }
+
+    del {
+        opacity: 0.6;
+    }
+
+    ins {
+        text-decoration: none;
+        color: $main-color;
+        border-bottom: 2px solid $main-color;
+    }
+
+    a {
+        display: inline-block;
+        color: $main-color-700;
+        text-decoration: none;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 0%;
+            height: 2px;
+            background-color: $main-color;
+            transition: .2s width ease-in-out;
+        }
+
+        &:hover {
+            color: $main-color;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    blockquote {
+        border-left: 3px solid $main-color;
+        padding: 8px 12px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border-radius: 4px;
+        font-style: italic;
+    }
+
+    code {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+
+    pre {
+        width: 100%;
+        height: fit-content;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 6px;
+
+        code {
+            background: none;
+            padding: 0px;
+        }
+    }
+
+    img {
+        width: 100%;
+        border-radius: 6px;
+        margin: 10px 0;
+        object-fit: cover;
+    }
+
+    small {
+        opacity: 0.7;
+        font-size: 13px;
+    }
+
+    hr {
+        border-color: rgba(255, 255, 255, 0.2);
+        height: 1px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    ul, ol {
+        margin-left: 20px;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        list-style-type: decimal;
+    }
+    hr {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

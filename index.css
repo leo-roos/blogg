@@ -86,7 +86,7 @@ main .content .posts, main .content .friends {
 }
 .sidebar .sidebar-items .sidebar-item:not(:last-child) {
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4470588235);
+  border-bottom: 1px solid #fff;
 }
 .sidebar .sidebar-items .sidebar-item .title {
   font-size: 22px;
@@ -125,6 +125,7 @@ main .content .posts, main .content .friends {
 }
 
 .posts {
+  flex: 1;
   background-color: rgb(88, 88, 88);
   margin-left: 20px;
   height: 100%;
@@ -142,10 +143,11 @@ main .content .posts, main .content .friends {
   align-items: center;
   gap: 2px;
 }
-.posts .post .title {
+.posts .post .title a {
   color: rgba(255, 174, 201, 0.7);
+  text-decoration: none;
 }
-.posts .post .title::after {
+.posts .post .title a::after {
   content: "";
   display: block;
   width: 0%;
@@ -153,14 +155,14 @@ main .content .posts, main .content .friends {
   background-color: rgb(255, 174, 201);
   transition: 0.2s width ease-in-out;
 }
-.posts .post .title {
+.posts .post .title a {
   cursor: pointer;
   transition: 0.2s color ease-in-out;
 }
-.posts .post .title:hover {
+.posts .post .title a:hover {
   color: rgb(255, 174, 201);
 }
-.posts .post .title:hover::after {
+.posts .post .title a:hover::after {
   width: 100%;
 }
 .posts .post .tags {
@@ -168,14 +170,15 @@ main .content .posts, main .content .friends {
   flex-direction: row;
   gap: 5px;
 }
-.posts .post .tags p {
+.posts .post .tags a {
   padding: 5px 10px;
   font-size: 13px;
   border-radius: 5px;
   background-color: rgba(255, 174, 201, 0.4);
   color: rgb(255, 174, 201);
+  text-decoration: none;
 }
-.posts .post .tags p::after {
+.posts .post .tags a::after {
   content: "";
   display: block;
   width: 0%;
@@ -183,15 +186,15 @@ main .content .posts, main .content .friends {
   background-color: rgb(255, 174, 201);
   transition: 0.2s width ease-in-out;
 }
-.posts .post .tags p {
+.posts .post .tags a {
   cursor: pointer;
   transition: 0.2s color ease-in-out, 0.2s background-color ease-in-out;
 }
-.posts .post .tags p:hover {
+.posts .post .tags a:hover {
   color: rgb(255, 174, 201);
   background-color: rgba(255, 174, 201, 0.6);
 }
-.posts .post .tags p:hover::after {
+.posts .post .tags a:hover::after {
   width: 100%;
 }
 .posts .post .date {
@@ -199,6 +202,27 @@ main .content .posts, main .content .friends {
   flex-direction: row;
   justify-content: space-between;
   color: #ffffff;
+}
+
+.post-content {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  flex: 1;
+  background-color: rgb(88, 88, 88);
+  margin-left: 20px;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  overflow-x: hidden;
+  padding: 10px;
+  gap: 10px;
+}
+.post-content .date {
+  margin-top: auto;
+}
+.post-content * {
+  box-sizing: border-box;
 }
 
 .gallery {
@@ -226,4 +250,118 @@ main .content .posts, main .content .friends {
 .friends {
   width: 180px;
   background-color: rgba(0, 255, 200, 0.45);
+}
+
+.post-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(255, 174, 201);
+}
+.post-content h2 {
+  font-size: 26px;
+  color: rgba(255, 174, 201, 0.7);
+}
+.post-content h3 {
+  font-size: 20px;
+  color: rgba(255, 174, 201, 0.7);
+}
+.post-content strong {
+  color: rgb(255, 174, 201);
+}
+.post-content em {
+  opacity: 0.9;
+}
+.post-content mark {
+  background: rgba(255, 174, 201, 0.6);
+  color: rgb(255, 174, 201);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.post-content u {
+  text-decoration-color: rgb(255, 174, 201);
+}
+.post-content del {
+  opacity: 0.6;
+}
+.post-content ins {
+  text-decoration: none;
+  color: rgb(255, 174, 201);
+  border-bottom: 2px solid rgb(255, 174, 201);
+}
+.post-content a {
+  display: inline-block;
+  color: rgba(255, 174, 201, 0.7);
+  text-decoration: none;
+}
+.post-content a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(255, 174, 201);
+  transition: 0.2s width ease-in-out;
+}
+.post-content a:hover {
+  color: rgb(255, 174, 201);
+}
+.post-content a:hover::after {
+  width: 100%;
+}
+.post-content blockquote {
+  border-left: 3px solid rgb(255, 174, 201);
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-style: italic;
+}
+.post-content code {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+.post-content pre {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 6px;
+}
+.post-content pre code {
+  background: none;
+  padding: 0px;
+}
+.post-content img {
+  width: 100%;
+  border-radius: 6px;
+  margin: 10px 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.post-content small {
+  opacity: 0.7;
+  font-size: 13px;
+}
+.post-content hr {
+  border-color: rgba(255, 255, 255, 0.2);
+  height: 1px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.post-content ul, .post-content ol {
+  margin-left: 20px;
+}
+.post-content ul li, .post-content ol li {
+  margin-bottom: 5px;
+}
+.post-content ul {
+  list-style-type: disc;
+}
+.post-content ol {
+  list-style-type: decimal;
+}
+.post-content hr {
+  width: 100%;
+  box-sizing: border-box;
 }/*# sourceMappingURL=index.css.map */
