@@ -157,7 +157,7 @@ nav .links ul li.active a {
 .card .items {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  gap: var(--space-1);
 }
 .card .items .item.post a {
   padding: var(--space-2);
@@ -180,13 +180,41 @@ nav .links ul li.active a {
 .card .items .item.post a:hover .title {
   color: #fff;
 }
-.card .items .item:not(.card .items .item.post):not(:first-child)::before {
-  content: ",";
+.card .items .item.social-link a {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+}
+.card .items .item.social-link a .icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%) sepia(100%) grayscale(100%) brightness(200%);
+  opacity: 0.8;
+}
+.card .items .item.social-link a .icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.card .items .item.social-link a .name {
+  color: #c5c5c5;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card .items .item.social-link a:hover {
+  border-color: rgba(255, 255, 255, 0.5882352941);
+}
+.card .items .item.social-link a:hover .name {
   color: #fff;
 }
 .card.posts .items {
   flex-direction: column;
-  gap: var(--space-2);
 }
 .card:hover {
   transform: translateY(-2px);
