@@ -89,8 +89,11 @@ main.post-content {
   align-items: start;
   gap: 10px;
 }
-main.post-content .date {
-  margin-top: auto;
+main.post-content .title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 main.post-content * {
   box-sizing: border-box;

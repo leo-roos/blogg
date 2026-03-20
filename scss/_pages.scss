@@ -99,8 +99,11 @@ main.post-content {
 
     gap: 10px;
 
-    .date {
-        margin-top: auto;
+    .title {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     * {
