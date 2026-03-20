@@ -9,7 +9,6 @@
 <body>
     <img id="background-image" src="Assets/Images/Anime-Blogg-BG.png" alt="" srcset="">
 
-    <main>
         <div class="content">
             <div class="sidebar">
                 <div class="profile">
@@ -26,9 +25,9 @@
                     <div class="sidebar-item">
                         <div class="title">Pages</div>
                         <div class="items">
-                            <a class="item" href="/">Home</a>
-                            <a class="item" href="#">About</a>
-                            <a class="item" href="#">Contact</a>
+                            <a class="item" href="/">Hem</a>
+                            <a class="item" href="#">Om</a>
+                            <a class="item" href="#">Kontakta</a>
                         </div>
                     </div>
                     
@@ -40,17 +39,16 @@
                             <a class="item" href="/post.html">Glass Med Rostad lök</a>
                         </div>
                     </div>
-                </div>
-                <div class="sidebar-items">
                     <div class="sidebar-item">
+                        <div class="title">Inställningar</div>
                         <div class="items">
-                            <a class="item" href="#">Settings</a>
+                            <a class="item" href="#">Byt Karaktär</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="posts">
+            <main class="posts">
                 <h1>Senaste Inläggen:</h1>
                 
                 <div class="post">
@@ -67,18 +65,18 @@
 
                     <p class="date">Okt 10, 2026</p>
                 </div>
-            </div>
+            </main>
 
             <div class="gallery">
                 <img src="Assets/Images/gojo.png" alt="" srcset="">
-                <button>Change Image</button>
+                <button onclick="location.pathname='/character-selection.html'">Change Image</button>
             </div>
 
             <div class="friends">
                 Friends
             </div>
         </div>
-    </main>
+    </div>
 
     <script src="main.js"></script>
 </body>

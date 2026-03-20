@@ -1,0 +1,20 @@
+[
+    {
+        "img": "/Assets/Images/gojo.png",
+        "label": "Saturo Gojo",
+        "from": "Jujutsu Kaisen",
+        "gender": "male"
+    },
+    {
+        "img": "/Assets/Images/gojo.png",
+        "label": "Saturo Gojo",
+        "from": "Jujutsu Kaisen",
+        "gender": "female"
+    },
+    {
+        "img": "/Assets/Images/gojo.png",
+        "label": "Saturo Gojo",
+        "from": "Jujutsu Kaisen",
+        "gender": "other"
+    }
+]
