@@ -1,6 +1,28 @@
 let filters, items;
 let selectedFilter = "all";
 let selectedCharacter = -1;
+let charactersData;
+let characterImage;
+
+async function fetchData() {
+    const req = await fetch("./characters.json")
+    const data = await req.json();
+    
+    // Sort
+    const sort1 = [];
+    for (let index = 0; index < data.length; index++) {
+        const item = data[index];
+        sort1.push(`${item.from} - ${item.label}`);
+    }
+    data.sort(function(a, b)
+        {
+            return a.from.localeCompare(b.from) + a.label.localeCompare(b.label)
+        }
+    );
+    console.log(data)
+    
+    charactersData = data;
+}
 
 function updateFilter() {
     for (let index = 0; index < filters.length; index++) {
@@ -14,6 +36,9 @@ function updateFilter() {
 }
 
 function updateSelectedCharacter() {
+    if (selectedCharacter != -1) {
+        characterImage.src = charactersData[selectedCharacter].img;
+    }
     for (let index = 0; index < items.length; index++) {
         const item = items[index];
         const itemIndex = item.getAttribute("data-index");
@@ -24,18 +49,13 @@ function updateSelectedCharacter() {
     }
 }
 
-async function updateCharacterList() {
-    const req = await fetch("./characters.json")
-    const data = await req.json();
-    console.log(data);
-    
+function updateCharacterList() {
     const list = document.querySelector("main.character-selection .items")
     list.innerHTML = "";
 
-    for (let index = 0; index < data.length; index++) {
-        const item = data[index];
+    for (let index = 0; index < charactersData.length; index++) {
+        const item = charactersData[index];
 
-        console.log(item.gender, selectedFilter)
         if (selectedFilter != "all" && item.gender != selectedFilter) {
             continue;
         }
@@ -62,7 +82,6 @@ async function updateCharacterList() {
         const item = items[index];
         item.addEventListener("click", function(event) {
             const itemIndex = item.getAttribute("data-index");
-            console.log(itemIndex)
             selectedCharacter = itemIndex;
             updateSelectedCharacter();
         })
@@ -72,8 +91,10 @@ async function updateCharacterList() {
 
 document.addEventListener("DOMContentLoaded", async function() {
     filters = document.querySelectorAll("main.character-selection .filters .filter");
+    characterImage = document.querySelector("img#character-image");
 
-    await updateCharacterList();
+    await fetchData();
+    updateCharacterList();
 
     for (let index = 0; index < filters.length; index++) {
         const filter = filters[index];
@@ -83,3 +104,20 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     }
 })
+
+function titleCase(str) {
+   var splitStr = str.toLowerCase().split(' ');
+   for (var i = 0; i < splitStr.length; i++) {
+       // You do not need to check if i is larger than splitStr length, as your for does that for you
+       // Assign it back to the array
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+   }
+   // Directly return the joined string
+   return splitStr.join(' '); 
+}
+const string = "Haruno sakura, kugisaki nobara, chisato nishikigi, takina inoue, mikasa ackerman, maomao, yashiro nene, uraraka ochaco, toga himiko, tsukumo yuki, ymir aot, historia reiss, kirigiri kyoko, fukawa toko, ougami sakura, nohara rin, nanami chiaki, enoshima junko, khoshi kirara"
+const a = string.split(","); 
+console.log(a);
+a.forEach(element => {
+    // window.open(`https://www.google.com/search?client=firefox-b-d&q=${element.replace(" ", "+")}`, "_blank")
+});

@@ -113,14 +113,38 @@ main.character-selection .filters .filter {
   padding: 5px 0;
   width: 100%;
   cursor: pointer;
-  background-color: rgba(80, 200, 120, 0.2);
-  border: 1px solid rgba(80, 200, 120, 0.5);
   outline: none;
   border-radius: 2px;
   transition: 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 main.character-selection .filters .filter.active, main.character-selection .filters .filter:hover {
   scale: 1.03;
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+main.character-selection .filters .filter.male {
+  background-color: rgba(0, 132, 255, 0.2);
+  border-color: rgba(0, 132, 255, 0.5);
+}
+main.character-selection .filters .filter.male.active, main.character-selection .filters .filter.male:hover {
+  background-color: rgba(0, 132, 255, 0.5);
+  border-color: rgb(0, 132, 255);
+}
+main.character-selection .filters .filter.female {
+  background-color: rgba(255, 174, 201, 0.2);
+  border-color: rgba(255, 174, 201, 0.5);
+}
+main.character-selection .filters .filter.female.active, main.character-selection .filters .filter.female:hover {
+  background-color: rgba(255, 174, 201, 0.5);
+  border-color: rgb(255, 174, 201);
+}
+main.character-selection .filters .filter.other {
+  background-color: rgba(80, 200, 120, 0.2);
+  border: 1px solid rgba(80, 200, 120, 0.5);
+}
+main.character-selection .filters .filter.other.active, main.character-selection .filters .filter.other:hover {
   border-color: #50c878;
   background-color: rgba(80, 200, 120, 0.5);
 }
@@ -139,7 +163,7 @@ main.character-selection .items .item {
   padding: 5px;
   border-radius: 2px;
   box-sizing: border-box;
-  width: calc(25% - 7.5px);
+  width: calc(20% - 8px);
   height: 400px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
