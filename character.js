@@ -118,11 +118,21 @@ document.addEventListener("DOMContentLoaded", async function() {
         })
     }
 
-    // fileUpload.addEventListener("change", async () => {
-    //     const file = fileUpload.files[0];
-    //     await saveImage(file);
-    //     await showImage();
-    // });
+    fileUpload.addEventListener("change", async () => {
+        const file = fileUpload.files[0];
+        const label = "Mauga";
+        const from = "Overwatch 2";
+        await saveImage(file, label, from);
+        await showImage(label, from);
+    });
+
+    const data = await loadImage("Mauga (Overwatch 2)");
+
+    if (!data) return;
+
+    const url = URL.createObjectURL(data.blob);
+    console.log(data);
+    console.log(url);
 })
 
 function openDB() {
@@ -130,7 +140,7 @@ function openDB() {
         const request = indexedDB.open("ImageDB", 1);
 
         request.onupgradeneeded = () => {
-        const db = request.result;
+            const db = request.result;
             db.createObjectStore("images", { keyPath: "id" });
         };
 
@@ -138,13 +148,15 @@ function openDB() {
         request.onerror = () => reject(request.error);
     });
 }
-async function saveImage(file) {
+async function saveImage(file, label, from) {
     const db = await openDB();
     const tx = db.transaction("images", "readwrite");
     const store = tx.objectStore("images");
 
     const imageData = {
-        id: "myImage",
+        id: `${label} (${from})`,
+        label: label,
+        from: from,
         blob: file
     };
 
@@ -152,27 +164,15 @@ async function saveImage(file) {
 
     return tx.complete;
 }
-async function loadImage() {
+async function loadImage(id) {
     const db = await openDB();
     const tx = db.transaction("images", "readonly");
     const store = tx.objectStore("images");
 
     return new Promise((resolve, reject) => {
-        const request = store.get("myImage");
+        const request = store.get(id);
 
         request.onsuccess = () => resolve(request.result);
         request.onerror = reject;
     });
-}
-async function showImage() {
-    const data = await loadImage();
-
-    if (!data) return;
-
-    const url = URL.createObjectURL(data.blob);
-
-    const img = document.createElement("img");
-    img.src = url;
-
-    document.body.appendChild(img);
 }
