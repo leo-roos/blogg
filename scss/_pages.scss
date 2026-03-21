@@ -13,7 +13,7 @@ main {
     padding: 10px;
 }
 
-main.posts {
+main#posts {
     .post {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         
@@ -92,7 +92,7 @@ main.posts {
     }
 }
 
-main.post-content {
+main#post-content {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
     align-items: start;
@@ -111,9 +111,14 @@ main.post-content {
     }
 }
 
-main.character-selection {
+main#character-selection {
     gap: 15px;
     padding: 15px;
+
+    .upload {
+        display: flex;
+        flex-direction: column;
+    }
 
     .filters {
         display: flex;
@@ -170,7 +175,6 @@ main.character-selection {
         flex-direction: row;
         flex-wrap: wrap;
         gap: $row-gap;
-        width: 100%;
 
         .item {
             // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -223,6 +227,50 @@ main.character-selection {
                 height: 100%;
                 object-fit: contain;
             }
+            .label {
+                padding: 2px 5px;
+                background-color: rgba(0, 0, 0, .7);
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                border-radius: 2px;
+                margin-top: auto;
+                
+                .from {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffffffb0;
+                    &::before {
+                        content: "(";
+                    }
+                    &::after {
+                        content: ")";
+                    }
+                }
+            }
+        }
+    }
+}
+
+main#add-new-character {
+    gap: 10px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .file, .label, .from, .gender, .submit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+ 
+        label {
+            color: #fff;
+        }
+        * {
+            color: #000;
         }
     }
 }

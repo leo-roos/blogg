@@ -48,60 +48,39 @@
                 </div>
             </div>
 
-            <main id="character-selection">
-                <h1>Character Selection</h1>
+            <main id="add-new-character">
+                <h1>Lägg till ny karaktär</h1>
 
-                <div class="upload">
-                    <button onclick="location.pathname='add-new-character.html'">Add New Character</button>
-                </div>
+                <form id="new-character-form">
+                    <div class="file">
+                        <label for="file-upload">Fil</label>
+                        <input type="file" name="file-upload" id="file-upload" required>
+                    </div>
 
-                <div class="filters">
-                    <button class="filter all active" data-type="all">
-                        All
-                    </button>
-                    <button class="filter male" data-type="male">
-                        Male
-                    </button>
-                    <button class="filter female" data-type="female">
-                        Female
-                    </button>
-                    <button class="filter other" data-type="other">
-                        Other
-                    </button>
-                </div>
+                    <div class="label">
+                        <label for="label">Namn</label>
+                        <input type="text" placeholder="Nagito" name="label" id="label" required>
+                    </div>
+                    
+                    <div class="from">
+                        <label for="from">Från</label>
+                        <input type="text" placeholder="Danganronpa" name="from" id="from" required>
+                    </div>
+                    
+                    <div class="gender">
+                        <label for="gender">Kön</label>
+                        <select name="gender" id="gender" required>
+                            <option value="male">Man</option>
+                            <option value="female">Kvinna</option>
+                            <option value="other">Annat</option>
+                        </select>
+                    </div>
 
-                <div class="items">
-                    <!-- <div class="item active">
-                        <img class="image" src="Assets/Images/gojo.png" alt="Gojo">
-                        <div class="label">
-                            Saturo Gojo (Jujutsu Kaisen)
-                        </div>
+                    <div class="submit">
+                        <button type="submit">Lägg Till</button>
                     </div>
-                    <div class="item">
-                        <img class="image" src="Assets/Images/gojo.png" alt="Gojo">
-                        <div class="label">
-                            Saturo Gojo (Jujutsu Kaisen)
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img class="image" src="Assets/Images/gojo.png" alt="Gojo">
-                        <div class="label">
-                            Saturo Gojo (Jujutsu Kaisen)
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img class="image" src="Assets/Images/gojo.png" alt="Gojo">
-                        <div class="label">
-                            Saturo Gojo (Jujutsu Kaisen)
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img class="image" src="Assets/Images/gojo.png" alt="Gojo">
-                        <div class="label">
-                            Saturo Gojo (Jujutsu Kaisen)
-                        </div>
-                    </div> -->
-                </div>
+                </form>
+
             </main>
 
             <div class="gallery">
@@ -112,6 +91,7 @@
         </div>
     </div>
 
+    <script src="add-new-character.js"></script>
     <script src="character.js"></script>
     <script src="main.js"></script>
 </body>

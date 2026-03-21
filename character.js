@@ -1,4 +1,4 @@
-let filters, items;
+let filters, items, fileUpload;
 let selectedFilter = "all";
 let selectedCharacter = -1;
 let charactersData;
@@ -19,7 +19,6 @@ async function fetchData() {
             return a.from.localeCompare(b.from) + a.label.localeCompare(b.label)
         }
     );
-    console.log(data)
     
     charactersData = data;
 }
@@ -36,21 +35,24 @@ function updateFilter() {
 }
 
 function updateSelectedCharacter() {
-    if (selectedCharacter != -1) {
+    if (characterImage != null && selectedCharacter != -1) {
         characterImage.src = charactersData[selectedCharacter].img;
     }
-    for (let index = 0; index < items.length; index++) {
-        const item = items[index];
-        const itemIndex = item.getAttribute("data-index");
-        item.classList.remove("active");
-        if (selectedCharacter == itemIndex) {
-            item.classList.add("active");
+    if (items) {
+        for (let index = 0; index < items.length; index++) {
+            const item = items[index];
+            const itemIndex = item.getAttribute("data-index");
+            item.classList.remove("active");
+            if (selectedCharacter == itemIndex) {
+                item.classList.add("active");
+                localStorage.setItem("selectedCharacter", JSON.stringify(charactersData[selectedCharacter]));
+            }
         }
     }
 }
 
 function updateCharacterList() {
-    const list = document.querySelector("main.character-selection .items")
+    const list = document.querySelector("main#character-selection .items")
     list.innerHTML = "";
 
     for (let index = 0; index < charactersData.length; index++) {
@@ -71,13 +73,13 @@ function updateCharacterList() {
 
         const label = document.createElement("div");
         label.classList.add("label");
-        label.textContent = `${item.label} (${item.from})`;
+        label.innerHTML = `${item.label} <div class="from">${item.from}</div>`;
 
         div.append(img, label);
         list.append(div);
     }
 
-    items = document.querySelectorAll("main.character-selection .items .item");
+    items = document.querySelectorAll("main#character-selection .items .item");
     for (let index = 0; index < items.length; index++) {
         const item = items[index];
         item.addEventListener("click", function(event) {
@@ -90,11 +92,23 @@ function updateCharacterList() {
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
-    filters = document.querySelectorAll("main.character-selection .filters .filter");
+    filters = document.querySelectorAll("main#character-selection .filters .filter");
     characterImage = document.querySelector("img#character-image");
+    fileUpload = document.querySelector("#file-upload");
 
     await fetchData();
-    updateCharacterList();
+
+    const selectedCharacterStorage = localStorage.getItem("selectedCharacter");
+    if (selectedCharacterStorage) {
+        const selectedCharacterData = JSON.parse(selectedCharacterStorage);
+        selectedCharacter = charactersData.findIndex((char) => char.label === selectedCharacterData.label && char.from === selectedCharacterData.from);
+    }
+
+    if (this.location.pathname == "/character-selection.html") {
+        updateCharacterList();
+    } else {
+        updateSelectedCharacter();
+    }
 
     for (let index = 0; index < filters.length; index++) {
         const filter = filters[index];
@@ -103,21 +117,62 @@ document.addEventListener("DOMContentLoaded", async function() {
             updateFilter();
         })
     }
+
+    // fileUpload.addEventListener("change", async () => {
+    //     const file = fileUpload.files[0];
+    //     await saveImage(file);
+    //     await showImage();
+    // });
 })
 
-function titleCase(str) {
-   var splitStr = str.toLowerCase().split(' ');
-   for (var i = 0; i < splitStr.length; i++) {
-       // You do not need to check if i is larger than splitStr length, as your for does that for you
-       // Assign it back to the array
-       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-   }
-   // Directly return the joined string
-   return splitStr.join(' '); 
+function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open("ImageDB", 1);
+
+        request.onupgradeneeded = () => {
+        const db = request.result;
+            db.createObjectStore("images", { keyPath: "id" });
+        };
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
 }
-const string = "Haruno sakura, kugisaki nobara, chisato nishikigi, takina inoue, mikasa ackerman, maomao, yashiro nene, uraraka ochaco, toga himiko, tsukumo yuki, ymir aot, historia reiss, kirigiri kyoko, fukawa toko, ougami sakura, nohara rin, nanami chiaki, enoshima junko, khoshi kirara"
-const a = string.split(","); 
-console.log(a);
-a.forEach(element => {
-    // window.open(`https://www.google.com/search?client=firefox-b-d&q=${element.replace(" ", "+")}`, "_blank")
-});
+async function saveImage(file) {
+    const db = await openDB();
+    const tx = db.transaction("images", "readwrite");
+    const store = tx.objectStore("images");
+
+    const imageData = {
+        id: "myImage",
+        blob: file
+    };
+
+    store.put(imageData);
+
+    return tx.complete;
+}
+async function loadImage() {
+    const db = await openDB();
+    const tx = db.transaction("images", "readonly");
+    const store = tx.objectStore("images");
+
+    return new Promise((resolve, reject) => {
+        const request = store.get("myImage");
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = reject;
+    });
+}
+async function showImage() {
+    const data = await loadImage();
+
+    if (!data) return;
+
+    const url = URL.createObjectURL(data.blob);
+
+    const img = document.createElement("img");
+    img.src = url;
+
+    document.body.appendChild(img);
+}
