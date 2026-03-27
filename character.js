@@ -90,7 +90,14 @@ function updateCharacterList() {
         label.classList.add("label");
         label.innerHTML = `${item.label} <div class="from">${item.from}</div>`;
 
+        const edit = document.createElement("button");
+        edit.innerHTML = "Redigera"
+
         div.append(img, label);
+
+        if (item.custom == true) {
+            div.append(edit);
+        }
         list.append(div);
     }
 
