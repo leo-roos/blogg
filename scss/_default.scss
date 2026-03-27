@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+button {
+    padding: 5px 0;
+    width: 100%;
+    cursor: pointer;
+    
+    outline: none;
+    border-radius: 2px;
+    transition: background-color .2s ease-in-out,
+                border-color .2s ease-in-out,
+                scale .1s ease-in-out,
+                transform .1s ease-in-out;
+
+
+    background-color: $main-color-200;
+    border: 1px solid $main-color-500;
+    &.active, &:hover {
+        background-color: $main-color-500;
+        border-color: $main-color;
+    }
+}
