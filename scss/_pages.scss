@@ -127,6 +127,7 @@ main#character-selection {
     .upload {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .filters {
@@ -136,17 +137,6 @@ main#character-selection {
         width: 100%;
 
         .filter {
-            padding: 5px 0;
-            width: 100%;
-            cursor: pointer;
-
-            outline: none;
-            border-radius: 2px;
-            transition: background-color .2s ease-in-out,
-                        border-color .2s ease-in-out,
-                        scale .1s ease-in-out,
-                        transform .1s ease-in-out;
-
             background-color: rgba(255, 255, 255, .2);
             border: 1px solid rgba(255, 255, 255, .5);
             &.active, &:hover {
@@ -191,6 +181,10 @@ main#character-selection {
         flex-wrap: wrap;
         gap: $row-gap;
         width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 10px;
+        box-sizing: border-box;
 
         .item {
             // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
