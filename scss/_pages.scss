@@ -1,6 +1,7 @@
 @use "variables" as *;
 
 main {
+    position: relative;
     flex: 1;
     background-color: rgb(88, 88, 88);
 
@@ -11,6 +12,14 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+
+    .go-back {
+        width: 100%;
+        button {
+            width: fit-content;
+            padding: 5px 15px;
+        }
+    }
 }
 
 main#posts {
@@ -133,7 +142,10 @@ main#character-selection {
 
             outline: none;
             border-radius: 2px;
-            transition: .2s ease-in-out;
+            transition: background-color .2s ease-in-out,
+                        border-color .2s ease-in-out,
+                        scale .1s ease-in-out,
+                        transform .1s ease-in-out;
 
             background-color: rgba(255, 255, 255, .2);
             border: 1px solid rgba(255, 255, 255, .5);
@@ -141,6 +153,9 @@ main#character-selection {
                 scale: 1.03;
                 border-color: rgb(255, 255, 255);
                 background-color: rgba(255, 255, 255, .5);
+            }
+            &.active, &:active {
+                transform: translateY(2px);
             }
 
             &.male {

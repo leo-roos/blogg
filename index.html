@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,72 +9,71 @@
 <body>
     <img id="background-image" src="Assets/Images/Anime-Blogg-BG.png" alt="" srcset="">
 
-        <div class="content">
-            <div class="sidebar">
-                <div class="profile">
-                    <div class="left">
-                        <img src="Assets/Images/gojo-emoji.png" alt="" srcset="">
-                    </div>
-                    <div class="right">
-                        <p>Leo</p>
-                        <p>Web Developer</p>
-                    </div>
+    <div class="content">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="left">
+                    <img src="Assets/Images/gojo-emoji.png" alt="" srcset="">
                 </div>
-
-                <div class="sidebar-items">
-                    <div class="sidebar-item">
-                        <div class="title">Pages</div>
-                        <div class="items">
-                            <a class="item" href="/">Hem</a>
-                            <a class="item" href="#">Om</a>
-                            <a class="item" href="#">Kontakta</a>
-                        </div>
-                    </div>
-                    
-                    <div class="sidebar-item">
-                        <div class="title">Utvalda Inlägg</div>
-                        <div class="items">
-                            <a class="item" href="/post.html">Glass Med Rostad lök</a>
-                            <a class="item" href="/post.html">Glass Med Rostad lök</a>
-                            <a class="item" href="/post.html">Glass Med Rostad lök</a>
-                        </div>
-                    </div>
-                    <div class="sidebar-item">
-                        <div class="title">Inställningar</div>
-                        <div class="items">
-                            <a class="item" href="#">Byt Karaktär</a>
-                        </div>
-                    </div>
+                <div class="right">
+                    <p>Leo</p>
+                    <p>Web Developer</p>
                 </div>
             </div>
 
-            <main id="posts">
-                <h1>Senaste Inläggen:</h1>
+            <div class="sidebar-items">
+                <div class="sidebar-item">
+                    <div class="title">Sidor</div>
+                    <div class="items">
+                        <a class="item" href="/" data-page="/">Hem</a>
+                        <a class="item" href="/about.html" data-page="/about.html">Om</a>
+                        <a class="item" href="/contact.html" data-page="/contact.html">Kontakta</a>
+                    </div>
+                </div>
                 
-                <div class="post">
-                    <h2 class="title">
-                        <a href="/post.html">Glass Med Rostad löaaaaaasddddddddddk</a>
-                    </h2>
-
-                    <div class="tags">
-                        <a href="#">grönsaker</a>
-                        <a href="#">mat</a>
-                        <a href="#">gott</a>
-                        <a href="#">tips</a>
+                <div class="sidebar-item">
+                    <div class="title">Utvalda Inlägg</div>
+                    <div class="items">
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
                     </div>
-
-                    <p class="date">Okt 10, 2026</p>
                 </div>
-            </main>
-
-            <div class="gallery">
-                <img id="character-image" src="Assets/Images/nagi.png" alt="" srcset="">
-                <button onclick="location.pathname='/character-selection.html'">Change Image</button>
+                <div class="sidebar-item">
+                    <div class="title">Inställningar</div>
+                    <div class="items">
+                        <a class="item" href="/character-selection.html" data-page="/character-selection.html">Byt Karaktär</a>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="friends">
-                Friends
+        <main id="posts">
+            <h1>Senaste Inläggen:</h1>
+            
+            <div class="post">
+                <h2 class="title">
+                    <a href="/post.html">Glass Med Rostad löaaaaaasddddddddddk</a>
+                </h2>
+
+                <div class="tags">
+                    <a href="#">grönsaker</a>
+                    <a href="#">mat</a>
+                    <a href="#">gott</a>
+                    <a href="#">tips</a>
+                </div>
+
+                <p class="date">Okt 10, 2026</p>
             </div>
+        </main>
+
+        <div class="gallery">
+            <img id="character-image" src="Assets/Images/nagi.png" alt="" srcset="">
+            <button onclick="location.pathname='/character-selection.html'">Change Image</button>
+        </div>
+
+        <div class="friends">
+            Friends
         </div>
     </div>
 

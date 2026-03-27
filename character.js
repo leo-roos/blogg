@@ -8,6 +8,11 @@ async function fetchData() {
     const req = await fetch("./characters.json")
     const data = await req.json();
 
+    for (let index = 0; index < data.length; index++) {
+        const item = data[index];
+        item.custom = false;
+    }
+
     // Add images from IndexedDB
     const images = await getAllImages();
     for (let index = 0; index < images.length; index++) {
@@ -18,7 +23,8 @@ async function fetchData() {
             from: item.from,
             img: imgURL,
             label: item.label,
-            gender: item.gender
+            gender: item.gender,
+            custom: true,
         });
     }
 
@@ -28,7 +34,6 @@ async function fetchData() {
             return a.from.localeCompare(b.from) || a.label.localeCompare(b.label)
         }
     );
-    console.log(data);
     
     charactersData = data;
 }
@@ -123,7 +128,12 @@ document.addEventListener("DOMContentLoaded", async function() {
     for (let index = 0; index < filters.length; index++) {
         const filter = filters[index];
         filter.addEventListener("click", function(event) {
-            selectedFilter = filter.getAttribute("data-type");
+            const type = filter.getAttribute("data-type");
+            if (selectedFilter == type) {
+                selectedFilter = "all";
+            } else {
+                selectedFilter = type;
+            }
             updateFilter();
         })
     }

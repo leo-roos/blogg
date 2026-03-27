@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Glass Med Rostad Lök - Oct 10, 2026</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -23,32 +23,36 @@
 
             <div class="sidebar-items">
                 <div class="sidebar-item">
-                    <div class="title">Pages</div>
+                    <div class="title">Sidor</div>
                     <div class="items">
-                        <a class="item" href="/">Hem</a>
-                        <a class="item" href="#">Om</a>
-                        <a class="item" href="#">Kontakta</a>
+                        <a class="item" href="/" data-page="/">Hem</a>
+                        <a class="item" href="/about.html" data-page="/about.html">Om</a>
+                        <a class="item" href="/contact.html" data-page="/contact.html">Kontakta</a>
                     </div>
                 </div>
                 
                 <div class="sidebar-item">
                     <div class="title">Utvalda Inlägg</div>
                     <div class="items">
-                        <a class="item" href="/post.html">Glass Med Rostad lök</a>
-                        <a class="item" href="/post.html">Glass Med Rostad lök</a>
-                        <a class="item" href="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
                     </div>
                 </div>
                 <div class="sidebar-item">
                     <div class="title">Inställningar</div>
                     <div class="items">
-                        <a class="item" href="#">Byt Karaktär</a>
+                        <a class="item" href="/character-selection.html" data-page="/character-selection.html">Byt Karaktär</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <main id="post-content">
+            <div class="go-back">
+                <button onclick="window.location.pathname='/';">Gå Tillbaka</button>
+            </div>
+
             <div class="title">
                 <h1>Glass Med Rostad Lök</h1>
                 <p class="date">Oct 10, 2026</p>
