@@ -23,16 +23,12 @@ async function fetchData() {
     }
 
     // Sort
-    const sort1 = [];
-    for (let index = 0; index < data.length; index++) {
-        const item = data[index];
-        sort1.push(`${item.from} - ${item.label}`);
-    }
     data.sort(function(a, b)
         {
-            return a.from.localeCompare(b.from) + a.label.localeCompare(b.label)
+            return a.from.localeCompare(b.from) || a.label.localeCompare(b.label)
         }
     );
+    console.log(data);
     
     charactersData = data;
 }
