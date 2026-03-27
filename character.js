@@ -7,7 +7,21 @@ let characterImage;
 async function fetchData() {
     const req = await fetch("./characters.json")
     const data = await req.json();
-    
+
+    // Add images from IndexedDB
+    const images = await getAllImages();
+    for (let index = 0; index < images.length; index++) {
+        const item = images[index];
+        const imgURL = URL.createObjectURL(item.blob);
+        
+        data.push({
+            from: item.from,
+            img: imgURL,
+            label: item.label,
+            gender: item.gender
+        });
+    }
+
     // Sort
     const sort1 = [];
     for (let index = 0; index < data.length; index++) {
@@ -117,22 +131,6 @@ document.addEventListener("DOMContentLoaded", async function() {
             updateFilter();
         })
     }
-
-    fileUpload.addEventListener("change", async () => {
-        const file = fileUpload.files[0];
-        const label = "Mauga";
-        const from = "Overwatch 2";
-        await saveImage(file, label, from);
-        await showImage(label, from);
-    });
-
-    const data = await loadImage("Mauga (Overwatch 2)");
-
-    if (!data) return;
-
-    const url = URL.createObjectURL(data.blob);
-    console.log(data);
-    console.log(url);
 })
 
 function openDB() {
@@ -148,29 +146,42 @@ function openDB() {
         request.onerror = () => reject(request.error);
     });
 }
-async function saveImage(file, label, from) {
+async function saveImage(file, label, from, gender) {
     const db = await openDB();
-    const tx = db.transaction("images", "readwrite");
-    const store = tx.objectStore("images");
+    const transaction = db.transaction("images", "readwrite");
+    const store = transaction.objectStore("images");
 
     const imageData = {
         id: `${label} (${from})`,
         label: label,
         from: from,
+        gender: gender,
         blob: file
     };
 
     store.put(imageData);
 
-    return tx.complete;
+    return transaction.complete;
 }
 async function loadImage(id) {
     const db = await openDB();
-    const tx = db.transaction("images", "readonly");
-    const store = tx.objectStore("images");
+    const transaction = db.transaction("images", "readonly");
+    const store = transaction.objectStore("images");
 
     return new Promise((resolve, reject) => {
         const request = store.get(id);
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = reject;
+    });
+}
+async function getAllImages() {
+    const db = await openDB();
+    const transaction = db.transaction("images", "readonly");
+    const store = transaction.objectStore("images");
+
+    return new Promise((resolve, reject) => {
+        const request = store.getAll();
 
         request.onsuccess = () => resolve(request.result);
         request.onerror = reject;
