@@ -175,6 +175,7 @@ main#character-selection {
         flex-direction: row;
         flex-wrap: wrap;
         gap: $row-gap;
+        width: 100%;
 
         .item {
             // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
