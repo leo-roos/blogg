@@ -73,8 +73,10 @@ function updateCharacterList() {
     for (let index = 0; index < charactersData.length; index++) {
         const item = charactersData[index];
 
-        if (selectedFilter != "all" && item.gender != selectedFilter) {
-            continue;
+        if (selectedFilter === "custom") {
+            if (!item.custom) continue;
+        } else if (selectedFilter !== "all") {
+            if (item.gender !== selectedFilter) continue;
         }
 
         const div = document.createElement("div");
@@ -90,26 +92,39 @@ function updateCharacterList() {
         label.classList.add("label");
         label.innerHTML = `${item.label} <div class="from">${item.from}</div>`;
 
-        const edit = document.createElement("button");
-        edit.innerHTML = "Redigera"
+        const deleteIcon = document.createElement("img");
+        deleteIcon.classList.add("delete-icon");
+        deleteIcon.src = "/Assets/Images/trash.png";
+
+        const editIcon = document.createElement("img");
+        editIcon.classList.add("edit-icon");
+        editIcon.src = "/Assets/Images/edit.png";
+
+        deleteIcon.addEventListener("click", function(event) {
+            console.log(event)
+        })
+        editIcon.addEventListener("click", function(event) {
+            console.log(event)
+        })
+
+        div.addEventListener("click", function(event) {
+            if (event.target != editIcon && event.target != deleteIcon) {
+                if (selectedCharacter != index) {
+                    selectedCharacter = index;
+                    updateSelectedCharacter();
+                }
+            }
+        })
 
         div.append(img, label);
 
         if (item.custom == true) {
-            div.append(edit);
+            div.append(deleteIcon, editIcon);
         }
         list.append(div);
     }
 
     items = document.querySelectorAll("main#character-selection .items .item");
-    for (let index = 0; index < items.length; index++) {
-        const item = items[index];
-        item.addEventListener("click", function(event) {
-            const itemIndex = item.getAttribute("data-index");
-            selectedCharacter = itemIndex;
-            updateSelectedCharacter();
-        })
-    }
     updateSelectedCharacter();
 }
 
