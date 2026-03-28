@@ -37,8 +37,11 @@ body {
     gap : 20px;
 
     .gallery, .friends {
-        box-sizing: border-box;
         padding: 10px;
+    }
+    & > div, & > main {
+        box-sizing: border-box;
+        height: 100%;
     }
 }
 
@@ -83,9 +86,6 @@ body {
 
     .sidebar-items {
         flex-direction: column;
-        // &:last-child {
-        //     margin-top: auto;
-        // }
 
         .sidebar-item {
             &:not(:last-child) {
