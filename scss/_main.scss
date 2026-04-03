@@ -25,7 +25,7 @@ body {
     z-index: -1;
 }
 
-.content {
+.main-layout {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -34,7 +34,7 @@ body {
     box-sizing: border-box;
     padding: 7% 12%;
     overflow-y: hidden;
-    gap : 20px;
+    gap: 20px;
 
     .gallery, .friends {
         padding: 10px;
