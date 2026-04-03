@@ -1,5 +1,16 @@
 @use "variables" as *;
 
+@keyframes enterPage {
+    from {
+        opacity: 0;
+        scale: 0.98;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
 main {
     position: relative;
     flex: 1;
@@ -11,6 +22,10 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+
+    & > * {
+        animation: enterPage .3s ease-out;
+    }
 
     .go-back {
         width: 100%;
