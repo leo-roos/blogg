@@ -53,9 +53,9 @@
                 <button onclick="window.location.pathname='/character-selection.html';">Gå Tillbaka</button>
             </div>
 
-            <h1>Lägg till ny karaktär</h1>
-
             <form id="new-character-form">
+                <h1>Lägg till ny karaktär</h1>
+
                 <div class="file">
                     <label for="file-upload">Fil</label>
                     <input type="file" name="file-upload" id="file-upload" required>
@@ -74,6 +74,7 @@
                 <div class="gender">
                     <label for="gender">Kön</label>
                     <select name="gender" id="gender" required>
+                        <option value="" disabled selected hidden>Välj ett kön</option>
                         <option value="male">Man</option>
                         <option value="female">Kvinna</option>
                         <option value="other">Annat</option>

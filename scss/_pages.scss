@@ -310,17 +310,64 @@ main#add-new-character {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        .file, .label, .from, .gender, .submit {
+        & > div {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
         }
  
         label {
             color: #fff;
         }
-        * {
-            color: #000;
+
+        input[type="text"], input[type="file"], select, button[type="submit"] {
+            box-sizing: border-box;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 100%;
+
+            transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            &[type="file"] {
+                cursor: pointer;
+            }
+            &::file-selector-button {
+                padding: 5px 10px;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                color: #fff;
+                cursor: pointer;
+
+                transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.3);
+                    border-color: rgba(255, 255, 255, 0.8);
+                }
+            }
+            option {
+                color: #000;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+
+            &:focus {
+                outline: none;
+                border-color: rgba(255, 255, 255, 0.8);
+                background-color: rgba(255, 255, 255, 0.3);
+            }
         }
     }
 }
