@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lägg till ny karaktär</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <img id="background-image" src="Assets/Images/Anime-Blogg-BG.png" alt="" srcset="">
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="left">
+                    <img src="Assets/Images/gojo-emoji.png" alt="" srcset="">
+                </div>
+                <div class="right">
+                    <p>Leo</p>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+
+            <div class="sidebar-items">
+                <div class="sidebar-item">
+                    <div class="title">Sidor</div>
+                    <div class="items">
+                        <a class="item" href="/" data-page="/">Hem</a>
+                        <a class="item" href="/about.html" data-page="/about.html">Om</a>
+                        <a class="item" href="/contact.html" data-page="/contact.html">Kontakta</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar-item">
+                    <div class="title">Utvalda Inlägg</div>
+                    <div class="items">
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="title">Inställningar</div>
+                    <div class="items">
+                        <a class="item" href="/character-selection.html" data-page="/character-selection.html">Byt Karaktär</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main id="edit-character">
+            <div class="page-layout">
+                <div class="go-back">
+                    <button onclick="window.location.pathname='/character-selection.html';">Gå Tillbaka</button>
+                </div>
+
+                <form id="edit-character-form">
+                    <h1>Redigera karaktär</h1>
+
+                    <div class="file">
+                        <label for="file-upload">Fil</label>
+                        <input type="file" name="file-upload" id="file-upload">
+                    </div>
+
+                    <div class="label">
+                        <label for="label">Namn</label>
+                        <input type="text" placeholder="Nagito" name="label" id="label" required>
+                    </div>
+                    
+                    <div class="from">
+                        <label for="from">Från</label>
+                        <input type="text" placeholder="Danganronpa" name="from" id="from" required>
+                    </div>
+                    
+                    <div class="gender">
+                        <label for="gender">Kön</label>
+                        <select name="gender" id="gender" required>
+                            <option value="" disabled selected hidden>Välj ett kön</option>
+                            <option value="male">Man</option>
+                            <option value="female">Kvinna</option>
+                            <option value="other">Annat</option>
+                        </select>
+                    </div>
+
+                    <div class="submit">
+                        <button type="submit">Spara Ändringar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <div class="gallery">
+            <img id="current-image" src="Assets/Images/gojo-emoji.png" alt="" srcset="">
+            <!-- <img id="character-image" src="Assets/Images/nagi.png" alt="" srcset=""> -->
+            <!-- <button onclick="location.pathname='/character-selection.html'">Byt Bild</button> -->
+        </div>
+    </div>
+
+    <script src="edit-character.js"></script>
+    <script src="character.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
