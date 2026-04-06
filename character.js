@@ -104,7 +104,10 @@ function updateCharacterList() {
             console.log(event)
         })
         editIcon.addEventListener("click", function(event) {
-            console.log(event)
+            const url = new URL("/edit-character.html", window.location.origin);
+            url.searchParams.set("index", index);
+
+            window.location.href = url;
         })
 
         div.addEventListener("click", function(event) {
@@ -191,7 +194,31 @@ async function saveImage(file, label, from, gender) {
 
     return transaction.complete;
 }
-async function loadImage(id) {
+async function editImage(file, oldId, label, from, gender) {
+    const existing = await getImage(oldId);
+
+    if (!existing) {
+        throw new Error("Image not found: " + oldId);
+    }
+
+    const db = await openDB();
+    const tx = db.transaction("images", "readwrite");
+    const store = tx.objectStore("images");
+
+    const updatedData = {
+        id: `${label} (${from})`,
+        label: label ?? existing.label,
+        from: from ?? existing.from,
+        gender: gender ?? existing.gender,
+        blob: file ?? existing.blob
+    };
+
+    await store.delete(existing.id);
+    await store.put(updatedData);
+
+    await tx.done;
+}
+async function getImage(id) {
     const db = await openDB();
     const transaction = db.transaction("images", "readonly");
     const store = transaction.objectStore("images");
