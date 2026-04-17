@@ -22,7 +22,6 @@ module.exports = function(eleventyConfig) {
                 }
             }
         }
-        console.log("All tags:", [...tagSet]);
 
         return [...tagSet];
     });

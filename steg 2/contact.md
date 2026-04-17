@@ -1,5 +1,5 @@
 ---
 layout: contact.liquid
-title: Välkommen hem
+title: Anime Blogg - Kontakta
 ---
 

@@ -1,5 +1,5 @@
 ---
 layout: start.liquid
-title: Välkommen hem
+title: Anime Blogg
 ---
 

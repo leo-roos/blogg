@@ -1,5 +1,5 @@
 ---
 layout: about.liquid
-title: Välkommen hem
+title: Anime Blogg - Om
 ---
 
