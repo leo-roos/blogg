@@ -1,0 +1,11 @@
+{% include "_includes/head.liquid" %}
+
+    <h1>DEt funkar</h1>
+    {% for post in collections.posts %}
+        <a href="{{post.url}}">{{post.data.title}}</a>
+    {% endfor %}
+
+    <h2>{{title}}</h2>
+    {{content}}
+</body>
+</html>

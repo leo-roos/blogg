@@ -1,0 +1,16 @@
+{
+  "name": "anime-blogg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx eleventy --serve"
+  },
+  "keywords": [],
+  "author": "Leo",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}
