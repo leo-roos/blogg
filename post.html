@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Med Rostad Lök - Oct 10, 2026</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <img id="background-image" src="Assets/Images/Anime-Blogg-BG.png" alt="" srcset="">
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <div class="profile">
+                <div class="left">
+                    <img src="Assets/Images/gojo-emoji.png" alt="" srcset="">
+                </div>
+                <div class="right">
+                    <p>Leo</p>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+
+            <div class="sidebar-items">
+                <div class="sidebar-item">
+                    <div class="title">Sidor</div>
+                    <div class="items">
+                        <a class="item" href="/" data-page="/">Hem</a>
+                        <a class="item" href="/about.html" data-page="/about.html">Om</a>
+                        <a class="item" href="/contact.html" data-page="/contact.html">Kontakta</a>
+                    </div>
+                </div>
+                
+                <div class="sidebar-item">
+                    <div class="title">Utvalda Inlägg</div>
+                    <div class="items">
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                        <a class="item" href="/post.html" data-page="/post.html">Glass Med Rostad lök</a>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="title">Inställningar</div>
+                    <div class="items">
+                        <a class="item" href="/character-selection.html" data-page="/character-selection.html">Byt Karaktär</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main id="post-content">
+            <div class="page-layout">
+                <div class="go-back">
+                    <button onclick="window.location.pathname='/';">Gå Tillbaka</button>
+                </div>
+
+                <div class="title">
+                    <h1>Glass Med Rostad Lök</h1>
+                    <p class="date">Oct 10, 2026</p>
+                </div>
+
+                <p>
+                    This is a <strong>very unusual dessert</strong> made with 
+                    <em>roasted onions</em>. It might sound strange, but the 
+                    <mark>caramelized flavor</mark> actually works surprisingly well.
+                </p>
+
+                <p>
+                    Some chefs even describe it as a <u>sweet and savory fusion</u>. 
+                    In older recipes you may also see ingredients that were 
+                    <del>removed</del> <ins>replaced with better alternatives</ins>.
+                </p>
+
+                <hr>
+
+                <h2>Ingredients</h2>
+                <ul>
+                    <li>Milk</li>
+                    <li>Sugar</li>
+                    <li>Roasted onions</li>
+                    <li>Vanilla extract</li>
+                </ul>
+
+                <h2>Steps</h2>
+                <ol>
+                    <li>Slice the onions thinly</li>
+                    <li>Roast them until caramelized</li>
+                    <li>Mix with milk and sugar</li>
+                    <li>Freeze for 3 hours</li>
+                </ol>
+
+                <hr>
+
+                <h2>Chef's Tip</h2>
+                <blockquote>
+                    Use sweet onions for the best flavor. Yellow onions will work,
+                    but sweet onions caramelize better.
+                </blockquote>
+
+                <h2>Code</h2>
+                <p>Code snippet:</p>
+
+                <pre><code>const makeIceCream = () => {
+console.log("Mix ingredients and freeze!");
+};
+
+makeIceCream();</code></pre>
+
+                <p>
+                    Inline code example: <code>npm install icecream-recipe</code>
+                </p>
+
+                <hr>
+
+                <h2>Image Example</h2>
+                <p>Here is what the final result might look like:</p>
+
+                <img src="Assets/Images/nagi.png" alt="Example image">
+
+                <p>
+                    View the <a href="https://example.com">original idea</a>.
+                </p>
+
+                <p>
+                    <small>Fun fact: Savory desserts have existed for centuries.</small>
+                </p>
+         </div>
+        </main>
+
+
+        <div class="gallery">
+            <img id="character-image" src="Assets/Images/nagi.png" alt="" srcset="">
+            <button onclick="location.pathname='/character-selection.html'">Byt Bild</button>
+        </div>
+    </div>
+
+    <script src="character.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

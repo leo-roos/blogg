@@ -1,0 +1,182 @@
+[
+    {
+        "from": "Blue Lock",
+        "img": "/Assets/Images/Characters/Blue-Lock/bachira-meguru.png",
+        "label": "Bachira Meguru",
+        "gender": "male"
+    },
+    {
+        "from": "Blue Lock",
+        "img": "/Assets/Images/Characters/Blue-Lock/isagi-yoichi.png",
+        "label": "Isagi Yoichi",
+        "gender": "male"
+    },
+    {
+        "from": "Blue Lock",
+        "img": "/Assets/Images/Characters/Blue-Lock/itoshi-rin.png",
+        "label": "Itoshi Rin",
+        "gender": "male"
+    },
+    {
+        "from": "Blue Lock",
+        "img": "/Assets/Images/Characters/Blue-Lock/mikage-reo.png",
+        "label": "Mikage Reo",
+        "gender": "male"
+    },
+    {
+        "from": "Blue Lock",
+        "img": "/Assets/Images/Characters/Blue-Lock/nagi-seishiro.png",
+        "label": "Nagi Seishiro",
+        "gender": "male"
+    },
+    {
+        "from": "Bungo Stray Dogs",
+        "img": "/Assets/Images/Characters/Bungo-Stray-Dogs/dazai-osamu.png",
+        "label": "Dzai Osamu",
+        "gender": "male"
+    },
+    {
+        "from": "Bungo Stray Dogs",
+        "img": "/Assets/Images/Characters/Bungo-Stray-Dogs/nakahara-chuuya.png",
+        "label": "Nakahara Chuuya",
+        "gender": "male"
+    },
+    {
+        "from": "Danganronpa",
+        "img": "/Assets/Images/Characters/Danganronpa/togami-byakuya.png",
+        "label": "Togami Byakuya",
+        "gender": "male"
+    },
+    {
+        "from": "Danganronpa",
+        "img": "/Assets/Images/Characters/Danganronpa/hinata-hajime.png",
+        "label": "Hinata Hajime",
+        "gender": "male"
+    },
+    {
+        "from": "Danganronpa",
+        "img": "/Assets/Images/Characters/Danganronpa/komaeda-nagito.png",
+        "label": "Komaeda Nagito",
+        "gender": "male"
+    },
+    {
+        "from": "Danganronpa",
+        "img": "/Assets/Images/Characters/Danganronpa/naegi-makoto.png",
+        "label": "Naegi Makoto",
+        "gender": "male"
+    },
+    {
+        "from": "Danganronpa",
+        "img": "/Assets/Images/Characters/Danganronpa/ouma-kokichi.png",
+        "label": "Ouma Kokichi",
+        "gender": "male"
+    },
+    {
+        "from": "Danganronpa",
+        "img": "/Assets/Images/Characters/Danganronpa/saihara-shuichi.png",
+        "label": "Saihara Shuichi",
+        "gender": "male"
+    },
+    {
+        "from": "Jujutsu Kaisen",
+        "img": "/Assets/Images/Characters/Jujutsu-Kaisen/choso.png",
+        "label": "Choso",
+        "gender": "male"
+    },
+    {
+        "from": "Jujutsu Kaisen",
+        "img": "/Assets/Images/Characters/Jujutsu-Kaisen/fushiguro-megumi.png",
+        "label": "Fushiguro Megumi",
+        "gender": "male"
+    },
+    {
+        "from": "Jujutsu Kaisen",
+        "img": "/Assets/Images/Characters/Jujutsu-Kaisen/geto-suguru.png",
+        "label": "Geto Suguru",
+        "gender": "male"
+    },
+    {
+        "from": "Jujutsu Kaisen",
+        "img": "/Assets/Images/Characters/Jujutsu-Kaisen/itadori-yuji.png",
+        "label": "Itadori Yuji",
+        "gender": "male"
+    },
+    {
+        "from": "Jujutsu Kaisen",
+        "img": "/Assets/Images/Characters/Jujutsu-Kaisen/kinji-hakari.png",
+        "label": "Kinji Hakari",
+        "gender": "male"
+    },
+    {
+        "from": "Jujutsu Kaisen",
+        "img": "/Assets/Images/Characters/Jujutsu-Kaisen/saturu-gojo.png",
+        "label": "Saturo Gojo",
+        "gender": "male"
+    },
+    {
+        "from": "Kurikami",
+        "img": "/Assets/Images/Characters/Kurikami/gojo-wakana.png",
+        "label": "Gojo Wakana",
+        "gender": "male"
+    },
+    {
+        "from": "My Hero Academia",
+        "img": "/Assets/Images/Characters/My-Hero-Academia/bakugo-katsuki.png",
+        "label": "Bakugo Katsuki",
+        "gender": "male"
+    },
+    {
+        "from": "My Hero Academia",
+        "img": "/Assets/Images/Characters/My-Hero-Academia/dabi.png",
+        "label": "Dabi",
+        "gender": "male"
+    },
+    {
+        "from": "My Hero Academia",
+        "img": "/Assets/Images/Characters/My-Hero-Academia/hawks.png",
+        "label": "Hawks",
+        "gender": "male"
+    },
+    {
+        "from": "My Hero Academia",
+        "img": "/Assets/Images/Characters/My-Hero-Academia/midoriya-izuku.png",
+        "label": "Midoriya Izuku",
+        "gender": "male"
+    },
+    {
+        "from": "My Hero Academia",
+        "img": "/Assets/Images/Characters/My-Hero-Academia/todoroki-shoto.png",
+        "label": "Todoroki Shoto",
+        "gender": "male"
+    },
+    {
+        "from": "Naruto",
+        "img": "/Assets/Images/Characters/Naruto/hatake-kakashi.png",
+        "label": "Hatake Kakashi",
+        "gender": "male"
+    },
+    {
+        "from": "Naruto",
+        "img": "/Assets/Images/Characters/Naruto/uchiha-obito.png",
+        "label": "Uchiha Obito",
+        "gender": "male"
+    },
+    {
+        "from": "Naruto",
+        "img": "/Assets/Images/Characters/Naruto/uchiha-sasuke.png",
+        "label": "Uchiha Sasuke",
+        "gender": "male"
+    },
+    {
+        "from": "Naruto",
+        "img": "/Assets/Images/Characters/Naruto/uzumaki-naruto.png",
+        "label": "Uzumaki Naruto",
+        "gender": "male"
+    },
+    {
+        "from": "The Apothecary Diaries",
+        "img": "/Assets/Images/Characters/The-Apothecary-Diaries/jinshi.png",
+        "label": "Jinshi",
+        "gender": "male"
+    }
+]

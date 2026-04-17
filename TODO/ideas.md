@@ -1,0 +1,4 @@
+- LoL
+- Overwatch
+- JoJo's
+- Minigames - Dle spel typ, gissa karaktärer

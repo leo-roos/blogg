@@ -1,0 +1,39 @@
+- [ ] Gojo Satoru
+- [ ] Fushiguro Megumi
+- [ ] Itadori Yuji
+- [ ] Hatake Kakashi
+- [ ] Uzumaki Naruto
+- [ ] Uchiha Sasuke
+- [ ] L
+- [ ] Light Yagami
+- [ ] Hanako
+- [ ] Monkey D. Luffy
+- [ ] Hinata Shoyo
+- [ ] Kageyama Tobio
+- [ ] Eren Yeager
+- [ ] Levi Ackerman
+- [ ] Armin Arlert
+- [ ] Jinshi
+- [ ] Bakugou Katsuki
+- [ ] Midoriya Izuku
+- [ ] Todoroki Shouto
+- [ ] Dabi
+- [ ] Hawks
+- [ ] Choso
+- [ ] Yoichi Isagi
+- [ ] Itoshi Rin
+- [ ] Bachira Meguru
+- [ ] Mikage Reo
+- [ ] Nagi Seishiro
+- [ ] Naegi Makoto
+- [ ] Byakuya Togami
+- [ ] Komaeda Nagito
+- [ ] Hinata Hajime
+- [ ] Ouma Kokichi
+- [ ] Saihara Shuichi
+- [ ] Dazai Osamu
+- [ ] Nakahara Chuuya
+- [ ] Gojou Wakana
+- [ ] Uchiha Obito
+- [ ] Hakari
+- [ ] Geto Suguru
