@@ -24,6 +24,7 @@ main {
         height: 100%;
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
         align-items: center;
     }
 
@@ -319,7 +320,7 @@ main#character-selection {
     }
 }
 
-main#add-new-character {
+main#add-new-character, main#edit-character {
     .page-layout {
         form {
             display: flex;

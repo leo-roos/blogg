@@ -48,18 +48,18 @@
             </div>
         </div>
 
-        <main id="add-new-character">
+        <main id="edit-character">
             <div class="page-layout">
                 <div class="go-back">
                     <button onclick="window.location.pathname='/character-selection.html';">Gå Tillbaka</button>
                 </div>
 
-                <form id="new-character-form">
-                    <h1>Lägg till ny karaktär</h1>
+                <form id="edit-character-form">
+                    <h1>Redigera karaktär</h1>
 
                     <div class="file">
                         <label for="file-upload">Fil</label>
-                        <input type="file" name="file-upload" id="file-upload" required>
+                        <input type="file" name="file-upload" id="file-upload">
                     </div>
 
                     <div class="label">
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="submit">
-                        <button type="submit">Lägg Till</button>
+                        <button type="submit">Spara Ändringar</button>
                     </div>
                 </form>
             </div>
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <script src="add-new-character.js"></script>
+    <script src="edit-character.js"></script>
     <script src="character.js"></script>
     <script src="main.js"></script>
 </body>
