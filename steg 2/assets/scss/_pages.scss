@@ -37,6 +37,8 @@ main {
 }
 
 main#posts {
+    overflow-y: scroll;
+    
     .post {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         

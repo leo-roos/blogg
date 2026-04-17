@@ -1,7 +1,32 @@
-{% include "_includes/head.liquid" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "_includes/components/head.liquid" %}
+</head>
+<body>
+    <img id="background-image" src="/assets/Images/Anime-Blogg-BG.png" alt="" srcset="">
 
-    <h1>Blogg</h1>
-    <h2>{{title}}</h2>
-    {{content}}
+    <div class="main-layout">
+        {% include "_includes/components/navbar.liquid" %}
+
+        <main id="post-content">
+            <div class="page-layout">
+                <div class="go-back">
+                    <button onclick="window.location.pathname='/';">Gå Tillbaka</button>
+                </div>
+
+                <div class="title">
+                    <h1>{{ title }}</h1>
+                    <div class="date">
+                        {{page.date | date: "%Y-%m-%d %H:%M" }} ({{ page.inputPath | lastModified | date: "%Y-%m-%d %H:%M" }})
+                    </div>
+                </div>
+                
+                {{content}}
+            </div>
+        </main>
+
+        {% include "_includes/components/gallery.liquid" %}
+    </div>
 </body>
 </html>

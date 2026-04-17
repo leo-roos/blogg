@@ -1,0 +1,42 @@
+---
+layout: tag.liquid
+pagination:
+  data: collections.allTags
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slugify }}/"
+---
+
+<main id="posts">
+    <div class="page-layout">
+        <div class="go-back">
+            <button onclick="window.location.pathname='/';">Gå Tillbaka</button>
+        </div>
+
+        <h1>Tag: {{ tag }}</h1>
+
+        <div class="page-layout">
+            {% for post in collections.posts %}
+                {% assign tags = post.data.tagList | default: post.data.tags %}
+
+                {% if tags contains tag %}
+                    <div class="post">
+                        <h2 class="title">
+                            <a href="{{post.url}}">{{post.data.title}}</a>
+                        </h2>
+
+                        <div class="tags">
+                            {% for tag in post.data.tagList %}
+                            {% if tag == "posts" %}
+                                {% continue %}
+                            {% endif %}
+                                <a href="/tags/{{tag | slugify}}">{{tag}}</a>
+                            {% endfor %}
+                        </div>
+                        <p class="date">{{post.date | date: "%Y-%m-%d" }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</main>

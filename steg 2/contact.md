@@ -1,5 +1,5 @@
 ---
-layout: start.liquid
+layout: contact.liquid
 title: Välkommen hem
 ---
 

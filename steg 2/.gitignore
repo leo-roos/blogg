@@ -3,3 +3,5 @@ package-lock.json
 
 assets/index.css.map
 assets/index.css
+
+_site/

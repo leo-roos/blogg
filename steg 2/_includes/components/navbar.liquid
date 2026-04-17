@@ -1,0 +1,35 @@
+<div class="sidebar">
+    <article class="profile">
+        <div class="left">
+            <img src="/assets/Images/gojo-emoji.png" alt="" srcset="">
+        </div>
+        <div class="right">
+            <span>Leo</span>
+            <span>Web Developer</span>
+        </div>
+    </article>
+
+    <nav class="sidebar-items">
+        <div class="sidebar-item">
+            <div class="title">Sidor</div>
+            <div class="items">
+                <a class="item" href="/" data-page="/">Hem</a>
+                <a class="item" href="/about" data-page="/about.html">Om</a>
+                <a class="item" href="/contact" data-page="/contact.html">Kontakta</a>
+            </div>
+        </div>
+        
+        <div class="sidebar-item">
+            <div class="title">Utvalda Inlägg</div>
+            <div class="items">
+                {% include "_includes/components/featured-posts.liquid" %}
+            </div>
+        </div>
+        <div class="sidebar-item">
+            <div class="title">Inställningar</div>
+            <div class="items">
+                <a class="item" href="/character-selection.html" data-page="/character-selection.html">Byt Karaktär</a>
+            </div>
+        </div>
+    </nav>
+</div>
