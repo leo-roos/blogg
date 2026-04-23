@@ -26,11 +26,15 @@ permalink: "/tags/{{ tag | slugify }}/"
                         </h2>
 
                         <div class="tags">
-                            {% for tag in post.data.tagList %}
-                            {% if tag == "posts" %}
-                                {% continue %}
-                            {% endif %}
-                                <a href="/tags/{{tag | slugify}}">{{tag}}</a>
+                            {% for tag_2 in post.data.tagList %}
+                                {% if tag_2tag_2 == "posts" %}
+                                    {% continue %}
+                                {% endif %}
+                                {% if tag == tag_2 %}
+                                    <a class="filtered" href="/tags/{{tag_2 | slugify}}">{{tag_2}}</a>
+                                {% else %}
+                                    <a href="/tags/{{tag_2 | slugify}}">{{tag_2}}</a>
+                                {% endif %}
                             {% endfor %}
                         </div>
                         <p class="date">{{post.date | date: "%Y-%m-%d" }}</p>
