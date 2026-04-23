@@ -1,10 +1,11 @@
 ---
-layout: tag.liquid
+layout: main.liquid
 pagination:
   data: collections.allTags
   size: 1
   alias: tag
 permalink: "/tags/{{ tag | slugify }}/"
+title: Anime Blogg - Taggar
 ---
 
 <main id="posts">
@@ -27,11 +28,8 @@ permalink: "/tags/{{ tag | slugify }}/"
 
                         <div class="tags">
                             {% for tag_2 in post.data.tagList %}
-                                {% if tag_2tag_2 == "posts" %}
-                                    {% continue %}
-                                {% endif %}
                                 {% if tag == tag_2 %}
-                                    <a class="filtered" href="/tags/{{tag_2 | slugify}}">{{tag_2}}</a>
+                                    <a class="filtered">{{tag_2}}</a>
                                 {% else %}
                                     <a href="/tags/{{tag_2 | slugify}}">{{tag_2}}</a>
                                 {% endif %}
