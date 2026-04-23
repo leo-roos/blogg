@@ -1,5 +1,9 @@
 {% for post in collections.posts limit:5 %}
     {% if post.data.featured %}
-        <a class="item" href="{{ post.url }}" data-page="{{ post.url }}">{{ post.data.title }}</a>
+        {% if page.url == post.url %}
+            <a class="item active" href="{{ post.url }}" data-page="{{ post.url }}">{{ post.data.title }}</a>
+        {% else %}
+            <a class="item" href="{{ post.url }}" data-page="{{ post.url }}">{{ post.data.title }}</a>
+        {% endif %}
     {% endif %}
 {% endfor %}

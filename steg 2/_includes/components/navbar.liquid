@@ -1,3 +1,7 @@
+{% assign pages = 
+  "/|Hem,/about/|Om,/contact/|Kontakta" | split: "," 
+%}
+
 <div class="sidebar">
     <article class="profile">
         <div class="left">
@@ -13,9 +17,17 @@
         <div class="sidebar-item">
             <div class="title">Sidor</div>
             <div class="items">
-                <a class="item" href="/" data-page="/">Hem</a>
-                <a class="item" href="/about" data-page="/about.html">Om</a>
-                <a class="item" href="/contact" data-page="/contact.html">Kontakta</a>
+                {% for item in pages %}
+                    {% assign values = item | split: "|" %}
+                    {% assign url = values[0] %}
+                    {% assign title = values[1] %}
+
+                    {% if page.url == url %}
+                        <a class="item active" href="{{ url }}" data-page="{{ url }}">{{ title }}</a>
+                    {% else %}
+                        <a class="item" href="{{ url }}" data-page="{{ url }}">{{ title }}</a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
         
