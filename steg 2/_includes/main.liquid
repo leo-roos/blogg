@@ -13,7 +13,9 @@
 
         {% include "_includes/components/gallery.liquid" %}
 
-        {% include "_includes/components/friends.liquid" %}
+        {% if show_friends %}
+            {% include "_includes/components/friends.liquid" %}
+        {% endif %}
     </div>
 </body>
 </html>
