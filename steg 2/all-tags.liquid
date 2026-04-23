@@ -1,0 +1,24 @@
+---
+layout: main.liquid
+title: Anime Blogg - Alla Taggar
+---
+
+<main id="posts">
+    <div class="page-layout">
+        <div class="go-back">
+            <button onclick="window.location.pathname='/'">Gå Tillbaka</button>
+        </div>
+
+        <h1>Alla Taggar</h1>
+
+        <div class="post">
+            <div class="tags">
+                {% for tag in collections.allTags %}
+                    <a class="tag" href="/tags/{{ tag | slugify }}">
+                        {{ tag }} ({{ collections.posts | where_exp: "post", "post.data.tagList contains tag" | size }})
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
