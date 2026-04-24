@@ -1,9 +1,5 @@
 {% for post in collections.posts limit:5 %}
     {% if post.data.featured %}
-        {% if page.url == post.url %}
-            <a class="item active" href="{{ post.url }}" data-page="{{ post.url }}">{{ post.data.title }}</a>
-        {% else %}
-            <a class="item" href="{{ post.url }}" data-page="{{ post.url }}">{{ post.data.title }}</a>
-        {% endif %}
+        {% include "_includes/components/navbar-item.liquid", url: post.url, title: post.data.title %}
     {% endif %}
 {% endfor %}

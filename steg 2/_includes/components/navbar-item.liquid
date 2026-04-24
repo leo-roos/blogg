@@ -1,0 +1,5 @@
+{% if page.url == url %}
+    <a class="item active" href="{{ url }}" data-page="{{ url }}">{{ title }}</a>
+{% else %}
+    <a class="item" href="{{ url }}" data-page="{{ url }}">{{ title }}</a>
+{% endif %}

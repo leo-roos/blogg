@@ -22,11 +22,7 @@
                     {% assign url = values[0] %}
                     {% assign title = values[1] %}
 
-                    {% if page.url == url %}
-                        <a class="item active" href="{{ url }}" data-page="{{ url }}">{{ title }}</a>
-                    {% else %}
-                        <a class="item" href="{{ url }}" data-page="{{ url }}">{{ title }}</a>
-                    {% endif %}
+                    {% include "_includes/components/navbar-item.liquid", url: url, title: title %}
                 {% endfor %}
             </div>
         </div>
@@ -40,7 +36,7 @@
         <div class="sidebar-item">
             <div class="title">Inställningar</div>
             <div class="items">
-                <a class="item" href="/character-selection" data-page="/character-selection">Byt Karaktär</a>
+                {% include "_includes/components/navbar-item.liquid", url: "/character-selection/", title: "Byt Karaktär" %}
             </div>
         </div>
     </nav>
