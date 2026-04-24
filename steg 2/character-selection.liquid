@@ -22,7 +22,7 @@ jsFiles: "character-selection.js"
                 {% assign parts = filter | split: "|" %}
                 {% assign label = parts[0] %}
                 {% assign value = parts[1] %}
-                <button onclick="selectFilter('{{value}}')" class="filter {{ value }}" data-type="{{ value }}">
+                <button class="filter {{ value }}" data-type="{{ value }}">
                     {{  label }}
                 </button>
             {% endfor %}
@@ -30,8 +30,8 @@ jsFiles: "character-selection.js"
         
         <div class="items">
             {% for character in collections.characters %}
-                <div class="item {{ character.gender }}" data-gender="{{ character.gender }}" data-custom="false">
-                    <img class="image" src="{{ character.img }}" alt="{{ character.label | slugify }}">
+                <div class="item {{ character.gender }}" data-character='{{ character | json }}'>
+                    <img class="image" src="{{ character.img }}" alt="{{ character.label }}">
                     <div class="label">
                         {{ character.label }} ({{ character.from }})
                     </div>
