@@ -1,4 +1,5 @@
 const fs = require("fs");
+const characters = require("./assets/characters.json")
 
 module.exports = function(eleventyConfig) {
     const watchFolders = [
@@ -45,5 +46,14 @@ module.exports = function(eleventyConfig) {
         }
 
         return [...tagSet];
+    });
+
+    eleventyConfig.addCollection("characters", (collectionApi) => {
+        const charactersSet = new Set();
+        for (const character of characters) {
+            charactersSet.add(character);
+        }
+
+        return [...charactersSet];
     });
 };

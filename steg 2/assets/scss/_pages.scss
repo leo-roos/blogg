@@ -209,6 +209,10 @@ main#character-selection {
                 flex-direction: column;
                 align-items: center;
                 
+                &.hidden {
+                    display: none;
+                }
+                
                 border: 2px solid transparent;
                 padding: 5px;
                 border-radius: 2px;

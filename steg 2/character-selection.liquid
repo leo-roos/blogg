@@ -7,7 +7,6 @@ jsFiles: "/assets/js/character-selection.js"
 {% assign filters = 
   "Alla|all,Män|male,Kvinnor|female,Annat|other,Custom|custom" | split: ","
 %}
-{% assign currentFilter = "all" %}
 
 
 <main id="character-selection">
@@ -23,43 +22,21 @@ jsFiles: "/assets/js/character-selection.js"
                 {% assign parts = filter | split: "|" %}
                 {% assign label = parts[0] %}
                 {% assign value = parts[1] %}
-                <button class="filter {{ value }} {{ currentFilter == value and active }}" data-type="{{ value }}">
+                <button onclick="selectFilter('{{value}}')" class="filter {{ value }}" data-type="{{ value }}">
                     {{  label }}
                 </button>
             {% endfor %}
         </div>
         
         <div class="items">
-            <!-- <div class="item active">
-                <img class="image" src="Assets/Images/nagi.png" alt="Gojo">
-                <div class="label">
-                    Saturo Gojo (Jujutsu Kaisen)
+            {% for character in collections.characters %}
+                <div class="item {{ character.gender }}" data-gender="{{ character.gender }}" data-custom="false">
+                    <img class="image" src="{{ character.img }}" alt="{{ character.label | slugify }}">
+                    <div class="label">
+                        {{ character.label }} ({{ character.from }})
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img class="image" src="Assets/Images/nagi.png" alt="Gojo">
-                <div class="label">
-                    Saturo Gojo (Jujutsu Kaisen)
-                </div>
-            </div>
-            <div class="item">
-                <img class="image" src="Assets/Images/nagi.png" alt="Gojo">
-                <div class="label">
-                    Saturo Gojo (Jujutsu Kaisen)
-                </div>
-            </div>
-            <div class="item">
-                <img class="image" src="Assets/Images/nagi.png" alt="Gojo">
-                <div class="label">
-                    Saturo Gojo (Jujutsu Kaisen)
-                </div>
-            </div>
-            <div class="item">
-                <img class="image" src="Assets/Images/nagi.png" alt="Gojo">
-                <div class="label">
-                    Saturo Gojo (Jujutsu Kaisen)
-                </div>
-            </div> -->
+            {% endfor %}
         </div>
     </div>
 </main>
