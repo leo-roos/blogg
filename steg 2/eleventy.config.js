@@ -2,8 +2,10 @@ const fs = require("fs");
 
 module.exports = function(eleventyConfig) {
     const watchFolders = [
+        "./assets/characters.json",
         "./assets/Fonts",
         "./assets/Images",
+        "./assets/js",
         "./assets/index.css",
     ]
     for (let index = 0; index < watchFolders.length; index++) {
