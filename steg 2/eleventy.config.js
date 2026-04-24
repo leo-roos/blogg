@@ -1,8 +1,17 @@
 const fs = require("fs");
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("assets/");
-    
+    const watchFolders = [
+        "./assets/Fonts",
+        "./assets/Images",
+        "./assets/index.css",
+    ]
+    for (let index = 0; index < watchFolders.length; index++) {
+        const element = watchFolders[index];
+        eleventyConfig.addPassthroughCopy(element);
+        eleventyConfig.addWatchTarget(element);
+    }
+
     eleventyConfig.addFilter("lastModified", (inputPath) => {
         const stats = fs.statSync(inputPath);
         return stats.mtime;
