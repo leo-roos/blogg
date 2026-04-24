@@ -18,6 +18,9 @@
         {% endif %}
     </div>
 
-    <script src="/assets/js/character-selection.js"></script>
+    {% assign jsFilesArray = jsFiles | split: "," %}
+    {% for jsFile in jsFilesArray %}
+        <script src="/assets/js/{{ jsFile }}"></script>
+    {% endfor %}
 </body>
 </html>
