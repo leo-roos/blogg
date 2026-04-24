@@ -12,7 +12,7 @@ title: Anime Blogg - Post
         <div class="title">
             <h1>{{ title }}</h1>
             <div class="date">
-                {{page.date | date: "%Y-%m-%d %H:%M" }} ({{ page.inputPath | lastModified | date: "%Y-%m-%d %H:%M" }})
+                {{page.date | postDate }} (redigerad: {{ page.inputPath | lastModified | postDateTime }})
             </div>
         </div>
         

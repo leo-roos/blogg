@@ -12,6 +12,16 @@ module.exports = function(eleventyConfig) {
         eleventyConfig.addWatchTarget(element);
     }
 
+    eleventyConfig.addFilter("postDate", (date) => {
+        let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+        return formattedDate;
+    });
+
+    eleventyConfig.addFilter("postDateTime", (date) => {
+        let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+        return formattedDate;
+    });
+
     eleventyConfig.addFilter("lastModified", (inputPath) => {
         const stats = fs.statSync(inputPath);
         return stats.mtime;

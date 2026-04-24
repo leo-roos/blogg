@@ -12,6 +12,6 @@
                 <a href="/tags/{{tag | slugify}}">{{tag}}</a>
             {% endfor %}
         </div>
-        <p class="date">{{post.date | date: "%Y-%m-%d" }}</p>
+        <p class="date">{{post.date | postDate }}</p>
     </div>
 {% endfor %}
