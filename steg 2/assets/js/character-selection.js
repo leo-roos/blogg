@@ -102,10 +102,7 @@ document.addEventListener("DOMContentLoaded", async function(event) {
             console.log(event)
         })
         editIcon.addEventListener("click", function(event) {
-            const url = new URL("/edit-character", window.location.origin);
-            url.searchParams.set("index", index);
-
-            window.location.href = url;
+            window.location.href = `/edit-character?index=${index}`;
         })
 
         div.addEventListener("click", function(event) {
