@@ -1,4 +1,8 @@
 <div class="gallery">
-    <img id="character-image" src="/assets/Images/nagi.png" alt="" srcset="">
+    {% if addNewCharacter %}
+        <img id="current-image" src="/assets/Images/nagi.png" alt="" srcset="">
+    {% else %}
+        <img id="character-image" src="/assets/Images/nagi.png" alt="" srcset="">
+    {% endif %}
     <button onclick="location.pathname='/character-selection'">Byt Bild</button>
 </div>
