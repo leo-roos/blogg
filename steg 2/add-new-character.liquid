@@ -1,0 +1,52 @@
+---
+layout: main.liquid
+title: Anime Blogg - Lägg till ny karaktär
+jsFiles: "add-new-character.js"
+addNewCharacter: true
+---
+
+{% assign filters = 
+  "Alla|all,Män|male,Kvinnor|female,Annat|other,Custom|custom" | split: ","
+%}
+
+
+<main id="add-new-character">
+    <div class="page-layout">
+        <div class="go-back">
+            <button onclick="window.location.pathname='/character-selection';">Gå Tillbaka</button>
+        </div>
+
+        <form id="new-character-form">
+            <h1>Lägg till ny karaktär</h1>
+
+            <div class="file">
+                <label for="file-upload">Fil</label>
+                <input type="file" name="file-upload" id="file-upload" required>
+            </div>
+
+            <div class="label">
+                <label for="label">Namn</label>
+                <input type="text" placeholder="Nagito" name="label" id="label" required>
+            </div>
+            
+            <div class="from">
+                <label for="from">Från</label>
+                <input type="text" placeholder="Danganronpa" name="from" id="from" required>
+            </div>
+            
+            <div class="gender">
+                <label for="gender">Kön</label>
+                <select name="gender" id="gender" required>
+                    <option value="" disabled selected hidden>Välj ett kön</option>
+                    <option value="male">Man</option>
+                    <option value="female">Kvinna</option>
+                    <option value="other">Annat</option>
+                </select>
+            </div>
+
+            <div class="submit">
+                <button type="submit">Lägg Till</button>
+            </div>
+        </form>
+    </div>
+</main>
