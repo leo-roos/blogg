@@ -15,14 +15,33 @@ module.exports = function(eleventyConfig) {
         eleventyConfig.addWatchTarget(element);
     }
 
-    eleventyConfig.addFilter("postDate", (date) => {
-        let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    function formatDate(date, showDate, showTime) {
+        let formattedDate = "";
+
+        if (showDate) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+
+            formattedDate += `${year}-${month}-${day}`;
+        }
+
+        if (showTime) {
+            const hours = String(date.getHours()).padStart(2, "0");
+            const minutes = String(date.getMinutes()).padStart(2, "0");
+
+            formattedDate += `${showDate ? " " : ""}${hours}:${minutes}`;
+        }
+
         return formattedDate;
+    }
+
+    eleventyConfig.addFilter("postDate", (date) => {
+        return formatDate(date, true, false);
     });
 
     eleventyConfig.addFilter("postDateTime", (date) => {
-        let formattedDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
-        return formattedDate;
+        return formatDate(date, true, true);
     });
 
     eleventyConfig.addFilter("lastModified", (inputPath) => {
