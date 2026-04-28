@@ -1,4 +1,7 @@
 node_modules/
 package-lock.json
 
+assets/index.css
+assets/index.css.map
+
 _site/
