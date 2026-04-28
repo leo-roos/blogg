@@ -1,13 +1,13 @@
 const fs = require("fs");
-const characters = require("./assets/characters.json")
+const characters = require("./assets/characters.json");
+const sassPlugin = require("@11tyrocks/eleventy-plugin-sass-lightningcss");
 
 module.exports = function(eleventyConfig) {
     const watchFolders = [
         "./assets/characters.json",
         "./assets/Fonts",
         "./assets/Images",
-        "./assets/js",
-        "./assets/index.css",
+        "./assets/js"
     ]
     for (let index = 0; index < watchFolders.length; index++) {
         const element = watchFolders[index];
@@ -55,5 +55,9 @@ module.exports = function(eleventyConfig) {
         }
 
         return [...charactersSet];
+    });
+
+    eleventyConfig.addPlugin(sassPlugin, {
+        watch: ["assets/index.scss"]
     });
 };
