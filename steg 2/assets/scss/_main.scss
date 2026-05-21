@@ -32,7 +32,7 @@ body {
     flex-direction: row;
     justify-content: center;
     box-sizing: border-box;
-    padding: 7% 12%;
+    padding: 5% 10%;
     overflow-y: hidden;
     gap: 20px;
 
@@ -42,6 +42,31 @@ body {
     & > div, & > main {
         box-sizing: border-box;
         height: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        overflow-y: scroll;
+        .main-layout {
+            flex-direction: column;
+            padding: 3% 6%;
+            height: fit-content;
+
+            .sidebar {
+                width: 100%;
+            }
+            main {
+                height: 100%;
+            }
+            .gallery {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .friends {
+                width: 100%;
+            }
+        }
     }
 }
 
