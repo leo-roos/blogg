@@ -398,6 +398,9 @@ main#about-content {
         p {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        a {
+            color: $main-color;
+        }
         
         .other-projects {
             overflow-y: scroll;
@@ -420,9 +423,6 @@ main#about-content {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                    }
-                    a {
-                        color: $main-color;
                     }
                     .updated-at {
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
