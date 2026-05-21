@@ -15,7 +15,7 @@ main {
     position: relative;
     flex: 1;
     background-color: rgb(88, 88, 88);
-    overflow-y: hidden;
+    overflow-y: scroll;
     padding: 10px;
 
     .page-layout {
@@ -37,8 +37,6 @@ main {
 }
 
 main#posts {
-    overflow-y: scroll;
-    
     .post {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         
@@ -388,6 +386,46 @@ main#add-new-character, main#edit-character {
                     outline: none;
                     border-color: rgba(255, 255, 255, 0.8);
                     background-color: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+}
+
+
+main#about-content {
+    .page-layout {
+        p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .other-projects {
+            .items {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 5px;
+
+                .repo {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+
+                    background-color: #0000006a;
+                    border-radius: 3px;
+                    padding: 5px;
+                    
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+                    a {
+                        color: chocolate;
+                    }
+                    .updated-at {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
                 }
             }
         }
