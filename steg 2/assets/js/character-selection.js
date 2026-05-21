@@ -23,7 +23,7 @@ function selectFilter(value) {
         if (value == "custom" && character.custom == true) {
             characterEl.classList.remove("hidden")
         }
-        else if (value == "all" || character.gender == value) {
+        else if (value == "all" || character.gender == value || (value == "other" && character.gender == "unknown")) {
             characterEl.classList.remove("hidden")
         } else {
             characterEl.classList.add("hidden")

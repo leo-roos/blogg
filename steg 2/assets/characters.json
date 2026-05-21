@@ -120,6 +120,96 @@
         "gender": "male"
     },
     {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/ahri.png",
+        "label": "Ahri",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/zed.png",
+        "label": "Zed",
+        "gender": "male"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/akali.png",
+        "label": "Akali",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/katarina.png",
+        "label": "Katarina",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/yasuo.png",
+        "label": "Yasuo",
+        "gender": "male"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/lux.png",
+        "label": "Lux",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/syndra.png",
+        "label": "Syndra",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/veigar.png",
+        "label": "Veigar",
+        "gender": "male"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/zoe.png",
+        "label": "Zoe",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/malphite.png",
+        "label": "Malphite",
+        "gender": "unknown"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/leona.png",
+        "label": "Leona",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/ornn.png",
+        "label": "Ornn",
+        "gender": "male"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/jinx.png",
+        "label": "Jinx",
+        "gender": "female"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/ezreal.png",
+        "label": "Ezreal",
+        "gender": "male"
+    },
+    {
+        "from": "League of Legends",
+        "img": "/Assets/Images/Characters/League-Of-Legends/ashe.png",
+        "label": "Ashe",
+        "gender": "female"
+    },
+    {
         "from": "My Hero Academia",
         "img": "/Assets/Images/Characters/My-Hero-Academia/bakugo-katsuki.png",
         "label": "Bakugo Katsuki",
