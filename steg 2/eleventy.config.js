@@ -25,8 +25,6 @@ module.exports = async function(eleventyConfig) {
             name: repo.name,
             description: repo.description,
             url: repo.html_url,
-            stars: repo.stargazers_count,
-            language: repo.language,
             updatedAt: repo.updated_at
         });
     }
