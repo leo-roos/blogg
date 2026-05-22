@@ -28,15 +28,6 @@ jsFiles: "character-selection.js"
             {% endfor %}
         </div>
         
-        <div class="items">
-            {% for character in collections.characters %}
-                <div class="item {{ character.gender }}" data-character='{{ character | json }}'>
-                    <img class="image" src="{{ character.img }}" alt="{{ character.label }}">
-                    <div class="label">
-                        {{ character.label }} ({{ character.from }})
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+        <div class="items"></div>
     </div>
 </main>

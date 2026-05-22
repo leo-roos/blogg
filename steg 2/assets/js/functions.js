@@ -1,3 +1,9 @@
+async function getDefaultCharacters() {
+    const response = await fetch("/assets/characters.json");
+    const data = await response.json();
+    return data;
+}
+
 function formatDate(date, showDate, showTime) {
     let formattedDate = "";
 
@@ -28,7 +34,6 @@ function githubRelativeDate(dateString) {
     const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
     const diffMinutes = Math.floor(diffMs / (1000 * 60));
     
-    console.log(`${diffMinutes > 0 && "" || "s"}`);
     if (diffHours === 0) return `${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
     else if (diffDays === 0) return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
     else if (diffDays === 1) return "Yesterday";

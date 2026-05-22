@@ -1,5 +1,4 @@
 var selectedCharacter = null;
-
 var characterImageEl = document.getElementById("character-image");
 
 function updateCharacter(character) {
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     const selectedCharacterData = JSON.parse(localStorage.getItem("selectedCharacter"));
 
     if (selectedCharacterData != null) {
-        console.log(selectedCharacterData);
         if (selectedCharacterData.custom == true) {
             const data = await getImage(`${selectedCharacterData.label} (${selectedCharacterData.from})`);
             if (!data) {

@@ -3,6 +3,7 @@ var charactersElsContainer = document.querySelector("#character-selection .page-
 var charactersEls = charactersElsContainer.querySelectorAll(".item");
 
 let currentFilter = "";
+let loading = true;
 
 function selectFilter(value) {
     currentFilter = value;
@@ -31,7 +32,28 @@ function selectFilter(value) {
     }
 }
 
-function selectCharacter(character) {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function selectCharacter(character) {
+    // while (loading === true) {
+        // setTimeout(() => {
+            // console.log("Waiting for characters to load");
+        // }, 100);
+    // }
+    if (loading === true) {
+        for (let index = 0; index < 25; index++) {
+            console.log("Waiting for characters to load");
+            await sleep(100);
+            
+            if (loading === false) {
+                break;
+            }
+        }
+    }
+
     for (let index = 0; index < charactersEls.length; index++) {
         const characterEl = charactersEls[index];
         const character2 = JSON.parse(characterEl.getAttribute("data-character"));
@@ -45,7 +67,7 @@ function selectCharacter(character) {
     updateCharacter(character);
 }
 
-document.addEventListener("DOMContentLoaded", async function(event) {
+document.addEventListener("DOMContentLoaded", async (event) => {
     selectFilter("all");
 
     for (let index = 0; index < filterEls.length; index++) {
@@ -65,7 +87,8 @@ document.addEventListener("DOMContentLoaded", async function(event) {
         })
     }
 
-    const data = [];
+    const defaultCharacters = await getDefaultCharacters();
+    const data = [...defaultCharacters];
     const images = await getAllImages();
     for (let index = 0; index < images.length; index++) {
         const item = images[index];
@@ -86,10 +109,14 @@ document.addEventListener("DOMContentLoaded", async function(event) {
         div.classList.add("item");
         div.classList.add(character.gender);
         div.setAttribute("data-character", JSON.stringify(character));
-        div.innerHTML = `
-            <img class="delete-icon" src="/assets/Images/trash.png" alt="delete-icon">
-            <img class="edit-icon" src="/assets/Images/edit.png" alt="edit-icon">
-
+        
+        if (character.custom === true) {
+            div.innerHTML = `
+                <img class="delete-icon" src="/assets/Images/trash.png" alt="delete-icon">
+                <img class="edit-icon" src="/assets/Images/edit.png" alt="edit-icon">
+            `;
+        }
+        div.innerHTML += `
             <img class="image" src="${character.img}" alt="${character.label}">
             <div class="label">
                 ${character.label} (${character.from})
@@ -98,12 +125,14 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 
         const deleteIcon = div.querySelector(".delete-icon");
         const editIcon = div.querySelector(".edit-icon");
-        deleteIcon.addEventListener("click", function(event) {
-            console.log(event)
-        })
-        editIcon.addEventListener("click", function(event) {
-            window.location.href = `/edit-character?index=${index}`;
-        })
+        if (character.custom === true) {
+            deleteIcon.addEventListener("click", function(event) {
+                console.log(event)
+            })
+            editIcon.addEventListener("click", function(event) {
+                window.location.href = `/edit-character?index=${index}`;
+            })
+        }
 
         div.addEventListener("click", function(event) {
             if (event.target != editIcon && event.target != deleteIcon) {
@@ -130,4 +159,6 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     });
 
     charactersEls2.forEach(el => charactersElsContainer.appendChild(el));
+
+    loading = false;
 })
