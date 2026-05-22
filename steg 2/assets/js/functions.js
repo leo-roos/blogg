@@ -25,9 +25,12 @@ function githubRelativeDate(dateString) {
 
     const diffMs = now - date;
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-    const diffhours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffMinutes = Math.floor(diffMs / (1000 * 60));
     
-    if (diffDays === 0) return `${diffhours} hours ago`;
+    console.log(`${diffMinutes > 0 && "" || "s"}`);
+    if (diffHours === 0) return `${diffMinutes} minute${diffMinutes > 1 ? "s" : ""} ago`;
+    else if (diffDays === 0) return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
     else if (diffDays === 1) return "Yesterday";
     else if (diffDays < 30) return `${diffDays} days ago`;
 
