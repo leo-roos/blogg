@@ -1,6 +1,7 @@
 ---
 layout: main.liquid
 title: Anime Blogg - Om
+jsFiles: [about-page.js]
 ---
 
 <main id="about-content">
@@ -10,22 +11,7 @@ title: Anime Blogg - Om
 
         <p>Jag har även andra projekt som man kan se på min <a href="https://github.com/leo-roos" target="_blank">GitHub profil</a>:</p>
         <div class="other-projects">
-            <div class="items">
-                {% for repo in collections.repos %}
-                    <div class="repo">
-                        <h2>{{ repo.name }}</h2>
-                        <p>{{ repo.description }}</p>
-
-                        <div>
-                            <a href="{{ repo.url }}" target="_blank">
-                                Visa Repo
-                            </a>
-
-                            <span class="updated-at">{{ repo.updatedAt | githubRelativeDate }}</span>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
+            <div class="items"></div>
         </div>
     </div>
 </main>

@@ -16,19 +16,6 @@ module.exports = async function(eleventyConfig) {
     }
     eleventyConfig.addWatchTarget("./assets/scss");
 
-    const response = await fetch("https://api.github.com/users/leo-roos/repos?sort=updated");
-    const data = await response.json();
-    const repos = [];
-    for (const repo of data) {
-        if (repo.archived) continue;
-        repos.push({
-            name: repo.name,
-            description: repo.description,
-            url: repo.html_url,
-            updatedAt: repo.updated_at
-        });
-    }
-
     function formatDate(date, showDate, showTime) {
         let formattedDate = "";
 
@@ -58,27 +45,9 @@ module.exports = async function(eleventyConfig) {
         return formatDate(date, true, true);
     });
 
-    eleventyConfig.addFilter("githubRelativeDate", (dateString) => {
-        const date = new Date(dateString);
-        const now = new Date();
-
-        const diffMs = now - date;
-        const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-        if (diffDays === 0) return "Today";
-        if (diffDays === 1) return "Yesterday";
-        if (diffDays < 30) return `${diffDays} days ago`;
-
-        return formatDate(date, true, false);
-    });
-
     eleventyConfig.addFilter("lastModified", (inputPath) => {
         const stats = fs.statSync(inputPath);
         return stats.mtime;
-    });
-
-    eleventyConfig.addCollection("repos", () => {
-        return repos;
     });
 
     eleventyConfig.addCollection("allTags", (collectionApi) => {

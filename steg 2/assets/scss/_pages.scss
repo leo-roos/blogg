@@ -404,11 +404,13 @@ main#about-content {
         
         .other-projects {
             overflow-y: scroll;
+            margin-top: 5px;
+            padding-right: 10px; // scroll-bar
+            
             .items {
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
-                padding: 5px;
 
                 .repo {
                     display: flex;
@@ -418,6 +420,13 @@ main#about-content {
                     background-color: #0000006a;
                     border-radius: 3px;
                     padding: 5px;
+
+                    cursor: pointer;
+                    transition: scale .15s ease-in-out;
+                    scale: .985;
+                    &:hover {
+                        scale: 1.0;
+                    }
                     
                     div {
                         display: flex;
