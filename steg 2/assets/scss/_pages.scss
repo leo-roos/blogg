@@ -405,7 +405,7 @@ main#about-content {
         .other-projects {
             overflow-y: scroll;
             margin-top: 5px;
-            padding-right: 10px; // scroll-bar
+            // padding-right: 10px; // scroll-bar
             
             .items {
                 display: flex;
@@ -436,6 +436,45 @@ main#about-content {
                     .updated-at {
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     }
+                }
+            }
+        }
+    }
+}
+
+main#guess-the-character {
+    .page-layout {
+        img#random-character-image {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            filter: blur(15px);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        #answer-alternatives {
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: auto auto; 
+            width: 65%;
+            gap: 10px;
+            
+            .answer {
+                display: flex;
+                min-height: 40px;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 5px 10px;
+                justify-content: center;
+                align-items: center;
+                background-color: #0000006a;
+                border-radius: 5px;
+
+                cursor: pointer;
+                transition: .15s ease-in-out;
+                &:hover {
+                    scale: 1.03;
                 }
             }
         }
