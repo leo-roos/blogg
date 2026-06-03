@@ -32,11 +32,6 @@ function selectFilter(value) {
     }
 }
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
 async function selectCharacter(character) {
     // while (loading === true) {
         // setTimeout(() => {
@@ -88,13 +83,13 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     }
 
     const defaultCharacters = await getDefaultCharacters();
-    const data = [...defaultCharacters];
+    const characters = [...defaultCharacters];
     const images = await getAllImages();
     for (let index = 0; index < images.length; index++) {
         const item = images[index];
         const imgURL = URL.createObjectURL(item.blob);
         
-        data.push({
+        characters.push({
             from: item.from,
             img: imgURL,
             label: item.label,
@@ -102,8 +97,8 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             custom: true,
         });
     }
-    for (let index = 0; index < data.length; index++) {
-        const character = data[index];
+    for (let index = 0; index < characters.length; index++) {
+        const character = characters[index];
         
         const div = document.createElement("div");
         div.classList.add("item");
